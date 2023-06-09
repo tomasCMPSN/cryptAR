@@ -8,6 +8,9 @@ import { FooterComponent } from './layout/footer/footer.component';
 import { HomeComponent } from './pages/home/home.component';
 import { CoinsComponent } from './pages/coins/coins.component';
 
+import { NgIconsModule } from '@ng-icons/core';
+import { bootstrapTwitter, bootstrapDiscord } from '@ng-icons/bootstrap-icons'
+
 const routes: Routes = [
   {
     path: "",
@@ -29,7 +32,8 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    NgIconsModule.withIcons({ bootstrapTwitter, bootstrapDiscord })
   ],
   providers: [],
   bootstrap: [AppComponent]
