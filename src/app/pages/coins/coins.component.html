@@ -1,1 +1,38 @@
-<p>coins works!</p>
+<div class="pt-24 bg-slate-950 text-white">
+  <div class="mx-4 xl:mx-32">
+    <div>
+      <div class="flex flex-col items-center">
+        <img
+          class="h-[300px] w-[300px]"
+          src="{{ response.image.large }}"
+          alt=""
+        />
+        <p class="text-6xl font-bold py-8">{{ response.name }}</p>
+        <p class="text-2xl pb-8">Ranking: #{{ response.coingecko_rank }}</p>
+      </div>
+      <div class="flex flex-col md:flex-row justify-between items-center text-2xl pb-8">
+        <p>
+          24 horas:
+          <span
+            [ngClass]="
+              response.market_data.price_change_percentage_24h >= 0
+                ? 'text-green-600'
+                : 'text-red-600'
+            "
+          >
+            {{ response.market_data.price_change_percentage_24h.toFixed(2) }} %
+          </span>
+        </p>
+        <div class="py-3">
+          <p>
+            Precio:<span class="text-green-600">
+              ${{ response.market_data.current_price.usd.toFixed(2) }}</span
+            >
+          </p>
+        </div>
+        <div>Símbolo: {{ response.symbol }}</div>
+      </div>
+      <div [innerHTML]="response.description.en" class="text-2xl pb-8"></div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,50 @@
+<div class="pt-16 bg-slate-950">
+  <div class="mx-4 xl:mx-32">
+    <div class="text-white text-4xl md:text-6xl mb-8 font-semibold">Mercado Actualizado</div>
+    <div class="relative overflow-x-auto">
+      <table class="w-full text-sm text-left text-white">
+        <thead
+          class="text-lg uppercase bg-gradient-to-r from-blue-700 to-yellow-400"
+        >
+          <tr>
+            <th scope="col" class="px-6 py-3">Moneda</th>
+            <th scope="col" class="px-6 py-3">Precio</th>
+            <th scope="col" class="px-6 py-3 whitespace-nowrap">24 Horas</th>
+            <th scope="col" class="px-6 py-3">Market Cap</th>
+          </tr>
+        </thead>
+        <tbody class="text-white text-lg">
+          <tr [routerLink]="['/coins', coin.id]" *ngFor="let coin of response" class="cursor-pointer border-b hover:bg-slate-800">
+            <th
+              scope="row"
+              class="flex px-6 py-4 font-medium whitespace-nowrap"
+            >
+              <img
+                class="h-8 me-4"
+                src="{{ coin.image }}"
+                alt="{{ coin.name }}"
+              />
+              {{ coin.name }}
+            </th>
+            <td class="px-6 py-4 whitespace-nowrap">
+              $ {{ numberWithCommas(coin.current_price) }}
+            </td>
+            <td
+              [ngClass]="
+                coin.price_change_percentage_24h >= 0
+                  ? 'text-green-600'
+                  : 'text-red-600'
+              "
+              class="px-6 py-4"
+            >
+              {{ coin.price_change_percentage_24h.toFixed(2) }} %
+            </td>
+            <td class="px-6 py-4 whitespace-nowrap">
+              $ {{ numberWithCommas(coin.market_cap) }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
