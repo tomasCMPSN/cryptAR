@@ -15,6 +15,7 @@ import { PresentationComponent } from './components/home/presentation/presentati
 import { TableComponent } from './components/home/table/table.component'
 import { CoinResolver } from './service/coin.resolver';
 import { ElegirnosComponent } from './components/home/elegirnos/elegirnos.component';
+import { UneteComponent } from './components/home/unete/unete.component';
 
 const routes: Routes = [
   {
@@ -37,7 +38,8 @@ const routes: Routes = [
     CoinsComponent,
     PresentationComponent,
     TableComponent,
-    ElegirnosComponent
+    ElegirnosComponent,
+    UneteComponent
   ],
   imports: [
     BrowserModule,
