@@ -21,6 +21,7 @@
     "@ng-icons/bootstrap-icons": "^25.1.0",
     "@ng-icons/core": "^25.1.0",
     "flowbite": "^1.6.5",
+    "ngx-page-scroll": "^11.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"
